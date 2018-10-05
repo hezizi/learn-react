@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import LikeButton from './state/LikeButton';
 import ComponentProps from './state/component-props/ComponentProps';
 import ComponentRefs from './state/component-refs/ComponentRefs';
+import TodoList from './state/todolist/TodoList';
 
 class App extends Component {
   render() {
@@ -20,6 +21,10 @@ class App extends Component {
         <LikeButton likeText="已赞" unLikeText="赞"/>
         <ComponentProps {...person}/>
         <ComponentRefs />
+
+        ---------------------------------------------
+
+        <TodoList />
       </div>
     );
   }
