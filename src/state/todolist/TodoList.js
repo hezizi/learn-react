@@ -19,13 +19,15 @@ class TodoList extends Component {
     })
   }
   addItem() {
+    const {todos, inputVal} = this.state;
     this.setState({
-      todos: [...this.state.todos, this.state.inputVal],
+      todos: [...todos, inputVal],
       inputVal: ''
     })
   }
   deleteItem(index) {
     const newTodos = [...this.state.todos];
+    // const newTodos = this.state.todos;
     newTodos.splice(index, 1);
     this.setState({
       todos: newTodos

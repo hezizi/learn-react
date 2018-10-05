@@ -10,7 +10,7 @@ class ComponentRefs extends Component {
     // console.log(this);
     // const inputVal = this.refs.content.value;
     console.log(this);
-    console.log(this.inputVal.value);
+    console.log(this.inputVal);
   }
   // 失去焦点事件
   handleBlur(event) {
