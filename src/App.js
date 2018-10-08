@@ -4,6 +4,7 @@ import LikeButton from './state/LikeButton';
 import ComponentProps from './state/component-props/ComponentProps';
 import ComponentRefs from './state/component-refs/ComponentRefs';
 import TodoList from './state/todolist/TodoList';
+import Lifecycle from './state/lifecycle/Lifecycle';
 
 class App extends Component {
   render() {
@@ -25,6 +26,10 @@ class App extends Component {
         ---------------------------------------------
 
         <TodoList />
+
+        ---------------------------------------------
+
+        <Lifecycle />
       </div>
     );
   }

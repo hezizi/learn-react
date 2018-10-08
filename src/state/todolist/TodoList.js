@@ -8,7 +8,7 @@ class TodoList extends Component {
     this.state = {
       todos: [],
       inputVal: ''
-    }
+    };
     this.addItem = this.addItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
@@ -19,14 +19,14 @@ class TodoList extends Component {
     })
   }
   addItem() {
-    const {todos, inputVal} = this.state;
+    let {todos, inputVal} = this.state;
     this.setState({
       todos: [...todos, inputVal],
       inputVal: ''
     })
   }
   deleteItem(index) {
-    const newTodos = [...this.state.todos];
+    let newTodos = [...this.state.todos];
     // const newTodos = this.state.todos;
     newTodos.splice(index, 1);
     this.setState({
@@ -34,7 +34,7 @@ class TodoList extends Component {
     })
   }
   getTodoItem() {
-    const {todos} = this.state;
+    let {todos} = this.state;
     return (
       todos.map((item, index) => {
         return (

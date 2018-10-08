@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class TodoItem extends Component {
   constructor(props) {
     super();
+    console.log(props);
     this.deleteItem = this.deleteItem.bind(this);
   }
   /*
@@ -12,7 +13,7 @@ class TodoItem extends Component {
     相当于子组件定义的deleteItem()方法会调用父组件定义的删除方法
   */
   deleteItem() {
-    const {delItem, index} = this.props;
+    let {delItem, index} = this.props;
     console.log(delItem);
     /*
       deleteItem(index) {
@@ -26,7 +27,8 @@ class TodoItem extends Component {
     delItem(index);   // 调用父组件的deleteItem(index)方法
   }
   render() {
-    const {content} = this.props;
+    let {content} = this.props;
+    console.log(content);
     return (
       <li onClick={this.deleteItem}>{content}</li>
     );
