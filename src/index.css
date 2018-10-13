@@ -4,6 +4,15 @@ body {
   font-family: sans-serif;
   background-color: #fbfbfb;
 }
+.df{
+  display: flex;
+}
+.flex-1{
+  flex: 1;
+}
+.df-jcfe{
+  justify-content: flex-end;
+}
 
 .wrapper {
   width: 500px;

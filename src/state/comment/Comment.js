@@ -9,6 +9,7 @@ class Comment extends Component {
       inputValList: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.del = this.del.bind(this);
   }
   // 接受子组件传过来的参数
   handleSubmit(c) {
@@ -27,12 +28,18 @@ class Comment extends Component {
       }
     }
   }
+  del(inputValListNew) {
+    console.log(inputValListNew);
+    this.setState({
+      inputValList: inputValListNew
+    })
+  }
   render() {
     const { inputValList } = this.state;
     return (
       <div className="wrapper">
         <CommentInput onSubmit={this.handleSubmit} />
-        <CommentList inputValList={inputValList} />
+        <CommentList inputValList={inputValList} handleDel={this.del}/>
       </div>
     );
   }
