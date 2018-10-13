@@ -5,6 +5,7 @@ class CommentListItem extends Component {
     super();
   }
   render() {
+    // 接收从父组件传递过来的值
     const { username, content } = this.props;
     return (
       <div className='comment'>
