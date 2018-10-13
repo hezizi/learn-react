@@ -18,7 +18,9 @@ class CommentListItem extends Component {
           <span>{username} </span>：
         </div>
         <p>{content}</p>
-        <div className="df flex-1 df-jcfe"><button onClick={this.delItem}>删除</button></div>
+        <div className="df flex-1 df-jcfe">
+          <button onClick={this.delItem}>删除</button>
+        </div>
       </div>
     );
   }
