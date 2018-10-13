@@ -13,9 +13,19 @@ class Comment extends Component {
   // 接受子组件传过来的参数
   handleSubmit(c) {
     const { inputValList } = this.state;
-    this.setState({
-      inputValList: [...inputValList, c]
-    })
+    if (!c) {
+      alert('请输入');
+    } else {
+      if (!c.username) {
+        alert('请输入用户名');
+      } else if (!c.content) {
+        alert('请输入留言内容');
+      } else {
+        this.setState({
+          inputValList: [...inputValList, c]
+        })
+      }
+    }
   }
   render() {
     const { inputValList } = this.state;

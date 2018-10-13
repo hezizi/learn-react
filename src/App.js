@@ -6,6 +6,7 @@ import React, { Component } from 'react'
 // import TodoList from './state/todolist/TodoList'
 import Lifecycle from './state/lifecycle/Lifecycle'
 import Comment from './state/comment/Comment'
+import PercentageApp from './state/Percentage-converter/PercentageApp'
 
 class App extends Component {
   render() {
@@ -29,12 +30,18 @@ class App extends Component {
         <TodoList />
 
         --------------------------------------------- */}
+        
+        <h1>-------------react生命周期-------------</h1>
 
         <Lifecycle />
-
-        ---------------------------------------------
+        
+        <h1>-------------react留言本-----------</h1>
 
         <Comment />
+
+        <h1>---------react百分比换算器----------</h1>
+
+        <PercentageApp />
       </div>
     );
   }
