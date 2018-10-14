@@ -7,6 +7,8 @@ import React, { Component } from 'react'
 import Lifecycle from './state/lifecycle/Lifecycle'
 import Comment from './state/comment/Comment'
 import PercentageApp from './state/Percentage-converter/PercentageApp'
+import Repoinfo from './state/axios/Repoinfo'
+import Search from './state/github-search/Search'
 
 class App extends Component {
   render() {
@@ -42,6 +44,14 @@ class App extends Component {
         <h1>---------react百分比换算器----------</h1>
 
         <PercentageApp />
+
+        <h1>---------react axios----------</h1>
+
+        <Repoinfo searchKey='r'/>
+
+        <h1>---------react axios搜索github用户----------</h1>
+
+        <Search />
       </div>
     );
   }

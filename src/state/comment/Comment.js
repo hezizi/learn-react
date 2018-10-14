@@ -8,11 +8,27 @@ class Comment extends Component {
     this.state = {
       inputValList: []
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.del = this.del.bind(this);
   }
   // 接受子组件传过来的参数
-  handleSubmit(c) {
+  // handleSubmit(c) {
+  //   const { inputValList } = this.state;
+  //   if (!c) {
+  //     alert('请输入');
+  //   } else {
+  //     if (!c.username) {
+  //       alert('请输入用户名');
+  //     } else if (!c.content) {
+  //       alert('请输入留言内容');
+  //     } else {
+  //       this.setState({
+  //         inputValList: [...inputValList, c]
+  //       })
+  //     }
+  //   }
+  // }
+  handleSubmit = (c) => {
     const { inputValList } = this.state;
     if (!c) {
       alert('请输入');
