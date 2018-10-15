@@ -9,7 +9,7 @@ class Userlist extends Component {
       responseText: []
     }
   }
-  componentWillMount() {
+  componentWillReceiveProps() {
     const { inputText } = this.props;
     console.log(inputText)
     let url =  `https://api.github.com/search/users?q=${inputText}`;
