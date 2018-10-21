@@ -16,7 +16,6 @@ class CommentList extends Component {
     const { inputValList } = this.props;
     return (
       inputValList.map((item, index) => {
-        console.log(item)
         return (
           <CommentListItem 
             del={this.delItem}

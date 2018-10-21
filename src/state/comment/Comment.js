@@ -8,26 +8,25 @@ class Comment extends Component {
     this.state = {
       inputValList: []
     };
-    // this.handleSubmit = this.handleSubmit.bind(this);
     this.del = this.del.bind(this);
   }
-  // 接受子组件传过来的参数
-  // handleSubmit(c) {
-  //   const { inputValList } = this.state;
-  //   if (!c) {
-  //     alert('请输入');
-  //   } else {
-  //     if (!c.username) {
-  //       alert('请输入用户名');
-  //     } else if (!c.content) {
-  //       alert('请输入留言内容');
-  //     } else {
-  //       this.setState({
-  //         inputValList: [...inputValList, c]
-  //       })
-  //     }
-  //   }
-  // }
+
+  _saveComments(inputValList) {
+    localStorage.setItem('inputValList', JSON.stringify(inputValList));
+  }
+
+  _loadComments() {
+    let inputValList = localStorage.getItem('inputValList');
+    if (inputValList) {
+      inputValList = JSON.parse(inputValList);
+    };
+    this.setState({ inputValList });
+  }
+
+  componentWillMount() {
+    this._loadComments();
+  }
+
   handleSubmit = (c) => {
     const { inputValList } = this.state;
     if (!c) {
@@ -38,18 +37,21 @@ class Comment extends Component {
       } else if (!c.content) {
         alert('请输入留言内容');
       } else {
+        let ValListNew = [...inputValList, c]
         this.setState({
-          inputValList: [...inputValList, c]
-        })
+          inputValList: ValListNew
+        });
+        this._saveComments(ValListNew);
       }
     }
   }
+
   del(inputValListNew) {
-    console.log(inputValListNew);
     this.setState({
       inputValList: inputValListNew
     })
   }
+
   render() {
     const { inputValList } = this.state;
     return (
