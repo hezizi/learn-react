@@ -9,6 +9,7 @@ import Comment from './state/comment/Comment'
 import PercentageApp from './state/Percentage-converter/PercentageApp'
 import Repoinfo from './state/axios/Repoinfo'
 import Search from './state/github-search/Search'
+import Routerdemo from './state/react-router/Router-demo01'
 
 class App extends Component {
   render() {
@@ -52,6 +53,10 @@ class App extends Component {
         <h1>---------react axios搜索github用户----------</h1>
 
         <Search />
+
+        <h1>---------react router 初体验----------</h1>
+
+        <Routerdemo />
       </div>
     );
   }
