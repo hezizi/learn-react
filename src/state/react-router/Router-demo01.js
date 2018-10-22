@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-
+ 
 import Home from './view/Home'
 import About from './view/About'
 import MyNavLink from './component/MyNavLink'

@@ -10,6 +10,7 @@ import PercentageApp from './state/Percentage-converter/PercentageApp'
 import Repoinfo from './state/axios/Repoinfo'
 import Search from './state/github-search/Search'
 import Routerdemo from './state/react-router/Router-demo01'
+import Reduxdemo from './state/react-redux/Redux-demo'
 
 class App extends Component {
   render() {
@@ -57,6 +58,10 @@ class App extends Component {
         <h1>---------react router 初体验----------</h1>
 
         <Routerdemo />
+
+        <h1>---------react redux 初体验----------</h1>
+
+        <Reduxdemo />
       </div>
     );
   }
