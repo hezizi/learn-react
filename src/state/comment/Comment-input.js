@@ -65,8 +65,7 @@ class CommentInput extends Component {
       // 这样就实现子组件的值传递给父组件
       onSubmit({ 
         username, 
-        content,
-        createdTime: new Date()
+        content
       });
     }
     // 每次输入完成后清空输入框的值

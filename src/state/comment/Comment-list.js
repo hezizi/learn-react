@@ -7,15 +7,15 @@ class CommentList extends Component {
     this.delItem = this.delItem.bind(this);
   }
   delItem(index) {
-    const { inputValList, handleDel } = this.props;
-    const inputValListNew = [...inputValList];
+    const { inputValLists, handleDel } = this.props;
+    let inputValListNew = [...inputValLists];
     inputValListNew.splice(index, 1);
     handleDel(inputValListNew);
   }
   render() {
-    const { inputValList } = this.props;
+    const { inputValLists } = this.props;
     return (
-      inputValList.map((item, index) => {
+      inputValLists.map((item, index) => {
         return (
           <CommentListItem 
             del={this.delItem}

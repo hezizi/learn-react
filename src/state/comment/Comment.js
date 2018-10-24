@@ -6,13 +6,13 @@ class Comment extends Component {
   constructor(props) {
     super();
     this.state = {
-      inputValList: []
+      inputValLists: []
     };
     this.del = this.del.bind(this);
   }
 
-  _saveComments(inputValList) {
-    localStorage.setItem('inputValList', JSON.stringify(inputValList));
+  componentWillMount() {
+    this._loadComments();
   }
 
   _loadComments() {
@@ -20,15 +20,15 @@ class Comment extends Component {
     if (inputValList) {
       inputValList = JSON.parse(inputValList);
     };
-    this.setState({ inputValList });
+    this.setState({ inputValLists: inputValList });
   }
 
-  componentWillMount() {
-    this._loadComments();
+  _saveComments(inputValList) {
+    localStorage.setItem('inputValList', JSON.stringify(inputValList));
   }
 
   handleSubmit = (c) => {
-    const { inputValList } = this.state;
+    const { inputValLists } = this.state;
     if (!c) {
       alert('请输入');
     } else {
@@ -37,9 +37,9 @@ class Comment extends Component {
       } else if (!c.content) {
         alert('请输入留言内容');
       } else {
-        let ValListNew = [...inputValList, c]
+        let ValListNew = [...inputValLists, c];
         this.setState({
-          inputValList: ValListNew
+          inputValLists: ValListNew
         });
         this._saveComments(ValListNew);
       }
@@ -48,16 +48,16 @@ class Comment extends Component {
 
   del(inputValListNew) {
     this.setState({
-      inputValList: inputValListNew
+      inputValLists: inputValListNew
     })
   }
 
   render() {
-    const { inputValList } = this.state;
+    const { inputValLists } = this.state;
     return (
       <div className="wrapper">
         <CommentInput onSubmit={this.handleSubmit} />
-        <CommentList inputValList={inputValList} handleDel={this.del}/>
+        <CommentList inputValLists={inputValLists} handleDel={this.del}/>
       </div>
     );
   }
